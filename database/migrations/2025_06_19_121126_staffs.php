@@ -11,7 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('staffs', function (Blueprint $table){
+            $table->id('');
+            $table->string('nm_staff');
+            $table->string('no_hp');
+            $table->timestamps();
+        });
     }
 
     /**
