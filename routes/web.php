@@ -15,8 +15,11 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->middleware('auth');
+Route::get('/home', function () {
+    return view('home');
+})->middleware('auth');
 Route::get('/cektemplate', function () {
     return view('layouts.template');
 });
