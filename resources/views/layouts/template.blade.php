@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{asset('/css/main.css')}}">
     <link rel="stylesheet" href="{{asset('/css/responsive.css')}}">
 
-    <title>Shared on THEMELOCK.COM - Retro - Minimal eCommerce HTML Template</title>
+    <title>Rental PS</title>
 </head>
 
 <body>
