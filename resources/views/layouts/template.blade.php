@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SeoDash Free Bootstrap Admin Template by Adminmart</title>
-  <link rel="shortcut icon" type="image/png" href="{{asset('../assets/images/logos/seodashlogo.png')}}" />
-  <link rel="stylesheet" href="{{asset('../../node_modules/simplebar/dist/simplebar.min.css')}}">
-  <link rel="stylesheet" href="{{asset('../assets/css/styles.min.css')}}" />
+  <link rel="shortcut icon" type="image/png" href="{{asset('/assets/images/logos/seodashlogo.png')}}" />
+  <link rel="stylesheet" href="{{asset('/node_modules/simplebar/dist/simplebar.min.css')}}">
+  <link rel="stylesheet" href="{{asset('/assets/css/styles.min.css')}}" />
 </head>
 
 <body>
@@ -20,7 +20,7 @@
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
           <a href="./index.html" class="text-nowrap logo-img">
-            <img src="{{asset('../assets/images/logos/logo-light.svg')}}" alt="" />
+            <img src="{{asset('/assets/images/logos/logo-light.svg')}}" alt="" />
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
             <i class="ti ti-x fs-8"></i>
@@ -31,26 +31,26 @@
           <ul id="sidebarnav">
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-6"></i>
-              <span class="hide-menu">Home</span>
+              <span class="hide-menu">Pesan</span>
             </li>
             <li class="sidebar-item">
               <a class="sidebar-link" href="./index.html" aria-expanded="false">
                 <span>
                   <iconify-icon icon="solar:home-smile-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
-                <span class="hide-menu">Dashboard</span>
+                <span class="hide-menu">Booking </span>
               </a>
             </li>
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-6"></i>
-              <span class="hide-menu">UI COMPONENTS</span>
+              <span class="hide-menu">LIST</span>
             </li>
             <li class="sidebar-item">
               <a class="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
                 <span>
                   <iconify-icon icon="solar:layers-minimalistic-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
-                <span class="hide-menu">Buttons</span>
+                <span class="hide-menu">Jenis </span>
               </a>
             </li>
             <li class="sidebar-item">
@@ -58,7 +58,7 @@
                 <span>
                   <iconify-icon icon="solar:danger-circle-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
-                <span class="hide-menu">Alerts</span>
+                <span class="hide-menu">Waktu Pengembalian</span>
               </a>
             </li>
             <li class="sidebar-item">
@@ -66,7 +66,7 @@
                 <span>
                   <iconify-icon icon="solar:bookmark-square-minimalistic-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
-                <span class="hide-menu">Card</span>
+                <span class="hide-menu">Pesanan</span>
               </a>
             </li>
             <li class="sidebar-item">
@@ -74,15 +74,11 @@
                 <span>
                   <iconify-icon icon="solar:file-text-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
-                <span class="hide-menu">Forms</span>
+                <span class="hide-menu">Staff</span>
               </a>
             </li>
             <li class="sidebar-item">
               <a class="sidebar-link" href="./ui-typography.html" aria-expanded="false">
-                <span>
-                  <iconify-icon icon="solar:text-field-focus-bold-duotone" class="fs-6"></iconify-icon>
-                </span>
-                <span class="hide-menu">Typography</span>
               </a>
             </li>
             <li class="nav-small-cap">
@@ -187,7 +183,15 @@
                       <i class="ti ti-list-check fs-6"></i>
                       <p class="mb-0 fs-3">My Task</p>
                     </a>
-                    <a href="./authentication-login.html" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                    <a href="./authentication-login.html" class="btn btn-outline-primary mx-3 mt-2 d-block" class="nav-link" href="{{ route('logout') }}"More actions
+                         onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                          {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                   </div>
                 </div>
               </li>
@@ -211,11 +215,11 @@
       </div>
     </div>
   </div>
-  <script src="{{(asset('/libs/jquery/dist/jquery.min.js')}}"></script>
-  <script src="{{(asset('/libs/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{(asset('/libs/simplebar/dist/simplebar.js')}}"></script>
-  <script src="{{(asset('/js/sidebarmenu.js')}}"></script>
-  <script src="{{(asset('/js/app.min.js')}}"></script>
+  <script src="{{asset('/libs/jquery/dist/jquery.min.js')}}"></script>
+  <script src="{{asset('/libs/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{asset('/libs/simplebar/dist/simplebar.js')}}"></script>
+  <script src="{{asset('/js/sidebarmenu.js')}}"></script>
+  <script src="{{asset('/js/app.min.js')}}"></script>
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
 </body>
 
