@@ -86,7 +86,7 @@
               <span class="hide-menu">AUTH</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
+              <a class="sidebar-link" href="login.blade.php" aria-expanded="false">
                 <span>
                   <iconify-icon icon="solar:login-3-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
@@ -173,14 +173,14 @@
       <div class="container-fluid">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title fw-semibold mb-4">Sample Page</h5>
-            <p class="mb-0">This is a sample page </p>
+            <h5 class="card-title fw-semibold mb-4">Welcome</h5>
+            <p class="mb-0">SAKIT OTAK UDAH INI </p>
           </div>
         </div>
         <div class="py-6 px-6 text-center">
           <p class="mb-0 fs-4">Design and Developed by <a href="https://adminmart.com/" target="_blank"
-              class="pe-1 text-primary text-decoration-underline">AdminMart.com</a> Distributed by <a href="https://themewagon.com/" target="_blank"
-              class="pe-1 text-primary text-decoration-underline">ThemeWagon</a></p>
+              class="pe-1 text-primary text-decoration-underline">AdminMart.com</a> Made By <a href="https://www.instagram.com/rnabilal?igsh=MW00OXA5cnIzN3d1cg==" target="_blank"
+              class="pe-1 text-primary text-decoration-underline">Rifqi Nabilal</a></p>
         </div>
       </div>
     </div>
