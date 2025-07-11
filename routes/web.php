@@ -1,7 +1,9 @@
 <?php
 
+use App\Models\Pelanggan;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\pelangganController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +19,30 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('home');
 })->middleware('auth');
+
 Route::get('/home', function () {
     return view('home');
 })->middleware('auth');
+
 Route::get('/cektemplate', function () {
     return view('layouts.template');
 });
+
+Route::get('/pelanggan', function () {
+    return view('Pelanggan.index');
+})->middleware('auth');
+
 Auth::routes();
 
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+//Data Pelanggan
+Route::get('/pelanggan', [pelangganController::class, 'index']);
+Route::get('/pelanggan/tambah', [pelangganController::class, 'create']);
+Route::post('/pelanggan', [pelangganController::class, 'store']);
+Route::get('/pelanggan/edit/{id}', [pelangganController::class, 'edit']);
+Route::put('/pelanggan/{id}', [pelangganController::class, 'update']);
+Route::delete('/pelanggan/{id}', [pelangganController::class, 'destroy']);
