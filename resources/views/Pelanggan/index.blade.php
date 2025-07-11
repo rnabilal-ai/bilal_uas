@@ -133,7 +133,7 @@
                     <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
                         <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
                             <a href="#" target="_blank"
-                                class="btn btn-success"><span class="d-none d-md-block">{{ Auth::user()->name }}</span> <span class="d-block d-md-none">Free</span></a>
+                                class="btn btn-success"><span class="d-none d-md-block">Bilal</span> <span class="d-block d-md-none">Free</span></a>
                             <li class="nav-item dropdown">
                                 <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
                                     aria-expanded="false">
@@ -177,7 +177,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">
-                                    <a href="/dosen/tambah" class="btn btn-primary btn-sm"><i class="fa fa-user-plus"></i> Tambah Data</a>
+                                    <a href="/pelanggan/tambah" class="btn btn-primary btn-sm"><i class="fa fa-user-plus"></i> Tambah Data</a>
                                 </h3>
 
                                 <div class="card-tools">
@@ -201,7 +201,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse ( $Pelanggan as $data)
+                                        @forelse ( $pelanggan as $data)
                                         <tr>
                                             <th scope="row">{{$nomor++}}</th>
                                             <td>{{$data->nidn}}</td>
@@ -252,7 +252,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <p class="mb-0">SAKIT OTAK UDAH INI </p>
+                            <p class="mb-0"> </p>
                         </div>
                     </div>
                     <div class="py-6 px-6 text-center">

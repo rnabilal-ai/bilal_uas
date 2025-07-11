@@ -33,13 +33,13 @@ class pelangganController extends Controller
     public function store(Request $request)
     {
         // proses tambah
-        $dosen = new Pelanggan();
-        $dosen->nidn = $request->nidn;
-        $dosen->nama = $request->nama;
-        $dosen->email = $request->email;
-        $dosen->rumpun = $request->rumpun;
-        $dosen->nohp = $request->nohp;
-        $dosen->save();
+        $pelanggan = new Pelanggan();
+        $pelanggan->nidn = $request->nidn;
+        $pelanggan->nama = $request->nama;
+        $pelanggan->email = $request->email;
+        $pelanggan->rumpun = $request->rumpun;
+        $pelanggan->nohp = $request->nohp;
+        $pelanggan->save();
 
         return redirect('/pelanggan');
     }
@@ -58,7 +58,7 @@ class pelangganController extends Controller
     public function edit(string $id)
     {
         // form edit
-        $dosen = Pelanggan::find($id);
+        $pelanggan = Pelanggan::find($id);
         return view('Pelanggan.edit', compact('pelanggan'));
     }
 
@@ -68,13 +68,13 @@ class pelangganController extends Controller
     public function update(Request $request, string $id)
     {
         // proses edit
-        $dosen = Pelanggan::find($id);
-        $dosen->nidn = $request->nidn;
-        $dosen->nama = $request->nama;
-        $dosen->email = $request->email;
-        $dosen->rumpun = $request->rumpun;
-        $dosen->nohp = $request->nohp;
-        $dosen->save();
+        $pelanggan = Pelanggan::find($id);
+        $pelanggan->nidn = $request->nidn;
+        $pelanggan->nama = $request->nama;
+        $pelanggan->email = $request->email;
+        $pelanggan->rumpun = $request->rumpun;
+        $pelanggan->nohp = $request->nohp;
+        $pelanggan->save();
 
 
         return redirect('/pelanggan');
@@ -86,8 +86,8 @@ class pelangganController extends Controller
     public function destroy(string $id)
     {
         // proses hapus
-        $dosen = Pelanggan::find($id);
-        $dosen->delete();
+        $pelanggan = Pelanggan::find($id);
+        $pelanggan->delete();
 
         return redirect('/pelanggan');
     }
