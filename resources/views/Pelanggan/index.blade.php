@@ -8,6 +8,7 @@
     <link rel="shortcut icon" type="image/png" href="{{asset('/assets/images/logos/seodashlogo.png')}}" />
     <link rel="stylesheet" href="{{asset('/node_modules/simplebar/dist/simplebar.min.css')}}">
     <link rel="stylesheet" href="{{asset('/assets/css/styles.min.css')}}" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -34,11 +35,11 @@
                             <span class="hide-menu">Pesan</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="./index.html" aria-expanded="false">
+                            <a class="sidebar-link" href="/pelanggan" aria-expanded="false">
                                 <span>
                                     <iconify-icon icon="solar:home-smile-bold-duotone" class="fs-6"></iconify-icon>
                                 </span>
-                                <span class="hide-menu">Booking </span>
+                                <span class="hide-menu">Pelanggan </span>
                             </a>
                         </li>
                         <li class="nav-small-cap">
@@ -193,10 +194,11 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th scope="col">#</th>
+                                            <th scope="col">NO</th>
                                             <th scope="col">NIDN</th>
                                             <th scope="col">Nama</th>
-                                            <th scope="col">Email</th>
+                                            <th scope="col">No HP</th>
+                                            <th scope="col">Alamat</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
@@ -205,32 +207,33 @@
                                         <tr>
                                             <th scope="row">{{$nomor++}}</th>
                                             <td>{{$data->nidn}}</td>
-                                            <td>{{$data->nama}}</td>
-                                            <td>{{$data->email}}</td>
+                                            <td>{{$data->nm_pelanggan}}</td>
+                                            <td>{{$data->no_hp}}</td>
+                                            <td>{{$data->alamat}}</td>
                                             <td>
                                                 <a href="" class="btn btn-warning btn-sm"><i class="fa fa-info"></i></a>
-                                                <a href="/dosen/edit/{{$data->id}}" class="btn btn-info btn-sm"><i class="fa fa-pen"></i></a>
+                                                <a href="/pelanggan/edit/{{$data->id}}" class="btn btn-info btn-sm"><i class="fa fa-pen"></i></a>
 
 
                                                 <!-- Button trigger modal -->
-                                                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal{{$data->id}}">
+                                                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal{{$data->id}}">
                                                     <i class="fa fa-trash"></i>
                                                 </button>
 
                                                 <!-- Modal -->
-                                                <div class="modal fade" id="exampleModal{{$data->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="deleteModal{{$data->id}}" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Peringatan</h1>
+                                                                <h1 class="modal-title fs-5" id="deleteModalLabel">Peringatan</h1>
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                Yakin Data Dosen a.n. {{$data->nama}} ingin dihapus?
+                                                                Yakin Data ini. {{$data->nm_pelanggan}} ingin dihapus?
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                                                <form action="dosen/{{$data->id}}" method="post">
+                                                                <form action="{{ route('pelanggan.destroy', $data->id) }}" method="POST">
                                                                     @csrf
                                                                     @method('DELETE')
                                                                     <button type="submit" class="btn btn-danger">Hapus</button>
@@ -263,6 +266,7 @@
                 </div>
             </div>
         </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="{{asset('/assets/libs/jquery/dist/jquery.min.js')}}"></script>
         <script src="{{asset('/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{asset('/assets/libs/simplebar/dist/simplebar.js')}}"></script>

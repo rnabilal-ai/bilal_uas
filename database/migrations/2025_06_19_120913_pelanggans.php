@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('pelanggans', function (Blueprint $table){
             $table->id();
+            $table->string('nidn');
             $table->string('nm_pelanggan');
             $table->string('no_hp');
             $table->string('alamat');

@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>@yield('title')</title>
   <title>SeoDash Free Bootstrap Admin Template by Adminmart</title>
   <link rel="shortcut icon" type="image/png" href="{{asset('/assets/images/logos/seodashlogo.png')}}" />
   <link rel="stylesheet" href="{{asset('/node_modules/simplebar/dist/simplebar.min.css')}}">
@@ -171,12 +172,7 @@
       </header>
       <!--  Header End -->
       <div class="container-fluid">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title fw-semibold mb-4">Welcome</h5>
-            <p class="mb-0">SAKIT OTAK UDAH INI </p>
-          </div>
-        </div>
+        @yield('content')
         <div class="py-6 px-6 text-center">
           <p class="mb-0 fs-4">Design and Developed by <a href="https://adminmart.com/" target="_blank"
               class="pe-1 text-primary text-decoration-underline">AdminMart.com</a> Made By <a href="https://www.instagram.com/rnabilal?igsh=MW00OXA5cnIzN3d1cg==" target="_blank"
@@ -185,6 +181,11 @@
       </div>
     </div>
   </div>
+
+
+
+  <!-- footer -->
+
   <script src="{{asset('/assets/libs/jquery/dist/jquery.min.js')}}"></script>
   <script src="{{asset('/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
   <script src="{{asset('/assets/libs/simplebar/dist/simplebar.js')}}"></script>

@@ -28,10 +28,6 @@ Route::get('/cektemplate', function () {
     return view('layouts.template');
 });
 
-Route::get('/pelanggan', function () {
-    return view('Pelanggan.index');
-})->middleware('auth');
-
 Auth::routes();
 
 
@@ -45,4 +41,4 @@ Route::get('/pelanggan/tambah', [pelangganController::class, 'create']);
 Route::post('/pelanggan', [pelangganController::class, 'store']);
 Route::get('/pelanggan/edit/{id}', [pelangganController::class, 'edit']);
 Route::put('/pelanggan/{id}', [pelangganController::class, 'update']);
-Route::delete('/pelanggan/{id}', [pelangganController::class, 'destroy']);
+Route::resource('/pelanggan', pelangganController::class);

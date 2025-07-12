@@ -35,10 +35,9 @@ class pelangganController extends Controller
         // proses tambah
         $pelanggan = new Pelanggan();
         $pelanggan->nidn = $request->nidn;
-        $pelanggan->nama = $request->nama;
-        $pelanggan->email = $request->email;
-        $pelanggan->rumpun = $request->rumpun;
-        $pelanggan->nohp = $request->nohp;
+        $pelanggan->nm_pelanggan = $request->nm_pelanggan;
+        $pelanggan->no_hp = $request->no_hp;
+        $pelanggan->alamat = $request->alamat;
         $pelanggan->save();
 
         return redirect('/pelanggan');
