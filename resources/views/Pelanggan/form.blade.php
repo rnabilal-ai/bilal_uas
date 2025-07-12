@@ -26,6 +26,10 @@
                             <label for="exampleInputPassword1" class="form-label">Alamat</label>
                             <input type="text" name="alamat" class="form-control" id="exampleInputPassword1">
                         </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Jenis</label>
+                            <input type="text" name="jenis" class="form-control" id="exampleInputPassword1">
+                        </div>
 
 
                         <button type="submit" class="btn btn-primary">Tambah</button>
