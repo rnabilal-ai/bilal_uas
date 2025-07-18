@@ -12,7 +12,7 @@ class pelangganController extends Controller
      */
     public function index()
     {
-        // menampilkan data dosen
+        // menampilkan data pelanggan
         $nomor = 1;
         $pelanggan = Pelanggan::all();
         return view('Pelanggan.index', compact('pelanggan', 'nomor'));
@@ -67,14 +67,12 @@ class pelangganController extends Controller
     public function update(Request $request, string $id)
     {
         // proses edit
-        $pelanggan = Pelanggan::find($id);
+        $pelanggan = new Pelanggan();
         $pelanggan->nidn = $request->nidn;
-        $pelanggan->nama = $request->nama;
-        $pelanggan->email = $request->email;
-        $pelanggan->rumpun = $request->rumpun;
-        $pelanggan->nohp = $request->nohp;
+        $pelanggan->nm_pelanggan = $request->nm_pelanggan;
+        $pelanggan->no_hp = $request->no_hp;
+        $pelanggan->alamat = $request->alamat;
         $pelanggan->save();
-
 
         return redirect('/pelanggan');
     }

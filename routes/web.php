@@ -4,6 +4,7 @@ use App\Models\Pelanggan;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\pelangganController;
+use App\Http\Controllers\jenisController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +43,11 @@ Route::post('/pelanggan', [pelangganController::class, 'store']);
 Route::get('/pelanggan/edit/{id}', [pelangganController::class, 'edit']);
 Route::put('/pelanggan/{id}', [pelangganController::class, 'update']);
 Route::resource('/pelanggan', pelangganController::class);
+
+//Data Jenis
+Route::get('/jenis', [jenisController::class, 'index']);
+Route::get('/jenis/tambah', [jenisController::class, 'create']);
+Route::post('/jenis', [jenisController::class, 'store']);
+Route::get('/jenis/edit/{id}', [jenisController::class, 'edit']);
+Route::put('/jenis/{id}', [jenisController::class, 'update']);
+Route::resource('/jenis', jenisController::class);

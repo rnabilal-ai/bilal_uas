@@ -47,7 +47,7 @@
                             <span class="hide-menu">LIST</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="/jenis" aria-expanded="false">
+                            <a class="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
                                 <span>
                                     <iconify-icon icon="solar:layers-minimalistic-bold-duotone" class="fs-6"></iconify-icon>
                                 </span>
@@ -186,24 +186,23 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">NO</th>
-                                            <th scope="col">NIDN</th>
-                                            <th scope="col">Nama</th>
-                                            <th scope="col">No HP</th>
-                                            <th scope="col">Alamat</th>
+                                            <th scope="col">id</th>
+                                            <th scope="col">Jenis</th>
+                                            <th scope="col">Harga</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse ( $pelanggan as $data)
+                                        @forelse ( $jenis as $data)
                                         <tr>
                                             <th scope="row">{{$nomor++}}</th>
-                                            <td>{{$data->nidn}}</td>
-                                            <td>{{$data->nm_pelanggan}}</td>
-                                            <td>{{$data->no_hp}}</td>
-                                            <td>{{$data->alamat}}</td>
+                                            <td>{{$data->id}}</td>
+                                            <td>{{$data->nm_jenis}}</td>
+                                            <td>{{$data->jenis}}</td>
+                                            <td>{{$data->harga}}</td>
                                             <td>
                                                 <a href="" class="btn btn-warning btn-sm"><i class="fa fa-info"></i></a>
-                                                <a href="/pelanggan/edit/{{$data->id}}" class="btn btn-info btn-sm"><i class="fa fa-pen"></i></a>
+                                                <a href="/jenis/edit/{{$data->id}}" class="btn btn-info btn-sm"><i class="fa fa-pen"></i></a>
 
 
                                                 <!-- Button trigger modal -->
@@ -220,11 +219,11 @@
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                Yakin Data ini. {{$data->nm_pelanggan}} ingin dihapus?
+                                                                Yakin Data ini. {{$data->nm_jenis}} ingin dihapus?
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                                                <form action="{{ route('pelanggan.destroy', $data->id) }}" method="POST">
+                                                                <form action="{{ route('jenis.destroy', $data->id) }}" method="POST">
                                                                     @csrf
                                                                     @method('DELETE')
                                                                     <button type="submit" class="btn btn-danger">Hapus</button>
